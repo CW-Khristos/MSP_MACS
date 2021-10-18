@@ -1,5 +1,6 @@
 #! /bin/bash
-FILE1=$1
-curl -O https://raw.githubusercontent.com/CW-Khristos/MSP_MACS/master/mxb-macosx-x86_64.pkg
-mv mxb-macosx-x86_64.pkg $FILE1
-installer -dumplog -pkg $FILE1 -target /
+UID=$1
+INSTALL="/Applications/bm#$UID#.pkg"
+curl -O $INSTALL https://raw.githubusercontent.com/CW-Khristos/MSP_MACS/master/mxb-macosx-x86_64.pkg
+installer -dumplog -pkg $INSTALL -target /Applications
+rm -f $INSTALL
